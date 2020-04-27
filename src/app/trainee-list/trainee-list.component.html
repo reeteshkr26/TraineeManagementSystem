@@ -1,0 +1,22 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25">
+    <table class="table table-sum" style="border: 1px;">
+      <thead class="table-primary">
+          <th>Id</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Domain</th>
+      </thead>
+      <ng-container *ngFor="let item of traineeList; let i=index">
+          <tr class="table-dark">
+              <td>{{item.traineeId}}</td>
+              <td>{{item.traineeName}}</td>
+              <td>{{item.traineeLocation}}</td>
+              <td>{{item.traineeDomain}}</td>
+          </tr>
+    
+      </ng-container>
+    
+    </table>
+</mat-card>
+  </div>

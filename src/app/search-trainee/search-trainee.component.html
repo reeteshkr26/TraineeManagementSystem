@@ -1,0 +1,33 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25">
+       <P >Search Page</P>
+            <mat-form-field >
+                <mat-label>Entter Trainee Id</mat-label>
+               <input matInput name="TraineeId" placeholder="Trainee Id" [(ngModel)]="traineeId">
+            </mat-form-field>
+              <button mat-raised-button color="primary" type="submit" (click)="findById()">Search</button>
+        </mat-card>
+
+        <div *ngIf="submitted && dataFound">
+            <table class="table table-sum" style="border: 1px;">
+                <thead class="table-primary">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Domain</th>
+                </thead>
+                <ng-container>
+                    <tr class="table-dark">
+                        <td>{{model.traineeId}}</td>
+                        <td>{{model.traineeName}}</td>
+                        <td>{{model.traineeLocation}}</td>
+                        <td>{{model.traineeDomain}}</td>
+                    </tr>
+                </ng-container>
+              
+              </table>
+
+        </div>
+        <div class="alert alert-danger" *ngIf="submitted && dataNotFound">Data Not Found</div>
+ 
+</div>

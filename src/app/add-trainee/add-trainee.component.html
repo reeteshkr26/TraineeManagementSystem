@@ -1,0 +1,42 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25">
+      
+        <form class="border border-light p-5" >
+
+            <p class="h4 mb-4">Add Trainee</p>
+            <div class="form-group">
+                <label for="Trainee Id">Trainee Id</label>
+                <input  type="text" class="form-control" name="traineeId" [(ngModel)]="model.traineeId">
+            </div>
+            
+            <div class="form-group">
+                <label for="Trainee Name">Trainee Name</label>
+                <input type="text"  class="form-control" name="traineeName" [(ngModel)]="model.traineeName">
+            </div>
+
+            <div class="form-group">
+                <label for="Trainee Location">Trainee Location</label>
+                <input type="text" class="form-control" name="traineeLocation" [(ngModel)]="model.traineeLocation">
+            </div>
+
+            <div class="form-group">
+                <label for="Trainee Domain">Trainee Domain</label>
+                <mat-select class="form-control" name="traineeDomain" [(ngModel)]="model.traineeDomain">
+                    <mat-option *ngFor="let item of  domainList" [value]="item">
+                        {{item}}
+                    </mat-option>
+
+               
+                </mat-select>
+              
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-info  my-4" type="submit" (click)="addTrainee()">Add Trainee</button>
+            </div>
+
+
+        </form>
+        <div class="alert alert-info" *ngIf="success">Trainee Added Successfully...</div>
+    </mat-card>
+    </div>
