@@ -1,17 +1,21 @@
 <div fxLayoutAlign="center center" fxFlexFill>
-    <mat-card fxFlex="25">
+    <mat-card fxFlex="25" *ngIf="!service.loginSuccess">
        <P >Login Page</P>
         <form fxLayoutAlign="stretch" fxLayout="column" class="form-group">
             <mat-form-field >
           
-              <input matInput placeholder="Username">
+              <input matInput placeholder="Username" name="userName" [(ngModel)]="user.userName">
             </mat-form-field>
           
             <mat-form-field >
             
-                <input matInput type="password" placeholder="Password">
+                <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="user.password">
               </mat-form-field>
-              <button mat-raised-button color="primary" type="submit">Login</button>
+              <button mat-raised-button color="primary" type="submit" (click)="loginUser()">Login</button>
           </form>
+
     </mat-card>
+    
+    <div class="alert alert-info" *ngIf="submitted && success && service.loginSuccess">you have logged in successfully.Now you can continue with the trainee Operation!</div>
+    <div class="alert alert-danger" *ngIf="submitted && unsuccess">Username and Password Invalid !</div>
 </div>

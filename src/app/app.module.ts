@@ -27,6 +27,7 @@ import { SearchTraineeComponent } from './search-trainee/search-trainee.componen
 import {HttpClientModule} from '@angular/common/http';
 
 import {TraineeServiceService} from './services/trainee-service.service';
+import { UpdateTraineeComponent } from './update-trainee/update-trainee.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {TraineeServiceService} from './services/trainee-service.service';
     AddTraineeComponent,
     TraineeListComponent,
     DeleteTraineeComponent,
-    SearchTraineeComponent
+    SearchTraineeComponent,
+    UpdateTraineeComponent
   ],
   imports: [
     BrowserModule,

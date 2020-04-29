@@ -6,6 +6,7 @@ import { TraineeListComponent } from './trainee-list/trainee-list.component';
 import { AddTraineeComponent } from './add-trainee/add-trainee.component';
 import { SearchTraineeComponent } from './search-trainee/search-trainee.component';
 import { DeleteTraineeComponent } from './delete-trainee/delete-trainee.component';
+import { UpdateTraineeComponent } from './update-trainee/update-trainee.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'viewAllTrainee',component:TraineeListComponent},
   {path:'addTrainee',component:AddTraineeComponent},
   {path:'searchTrainee',component:SearchTraineeComponent},
-  {path:'deleteTrainee',component:DeleteTraineeComponent}
+  {path:'deleteTrainee',component:DeleteTraineeComponent},
+  {path:'updateTrainee',component:UpdateTraineeComponent}
 ];
 
 @NgModule({

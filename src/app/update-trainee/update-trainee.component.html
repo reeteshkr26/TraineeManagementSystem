@@ -1,0 +1,55 @@
+
+    <div fxLayoutAlign="center center" fxFlexFill>
+        <mat-card fxFlex="25">
+            <P>Search Page</P>
+            <mat-form-field>
+                <mat-label>Entter Trainee Id</mat-label>
+                <input matInput name="traineeId" placeholder="Trainee Id" [(ngModel)]="traineeId">
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" (click)="findById()">Search</button>
+            <div class="alert alert-danger" *ngIf="submitted && dataNotFound">Data Not Found</div>
+        </mat-card>
+  
+
+        <mat-card fxFlex="30" *ngIf="popupForm && dataFound">
+            <form class="border border-light p-5">
+
+                <p class="h4 mb-4">Add Trainee</p>
+                <div class="form-group">
+                    <label for="Trainee Id">Trainee Id</label>
+                    <input readonly type="text" class="form-control" name="traineeId" [(ngModel)]="model.traineeId">
+                </div>
+
+                <div class="form-group">
+                    <label for="Trainee Name">Trainee Name</label>
+                    <input type="text" class="form-control" name="traineeName" [(ngModel)]="model.traineeName">
+                </div>
+
+                <div class="form-group">
+                    <label for="Trainee Location">Trainee Location</label>
+                    <input type="text" class="form-control" name="traineeLocation" [(ngModel)]="model.traineeLocation">
+                </div>
+
+                <div class="form-group">
+                    <label for="Trainee Domain">Trainee Domain</label>
+                    <mat-select class="form-control" name="traineeDomain" [(ngModel)]="model.traineeDomain">
+                        <mat-option *ngFor="let item of  domainList" [value]="item">
+                            {{item}}
+                        </mat-option>
+
+
+                    </mat-select>
+
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-info  my-4" type="submit" (click)="updateTrainee()">Update Trainee</button>
+                </div>
+
+
+            </form>
+
+
+        </mat-card>
+        <div class="alert alert-info" *ngIf="updateButtonSubmit && success">Trainee Updated Successfully...</div>
+    </div>

@@ -9,7 +9,7 @@ import {TraineeServiceService} from '../services/trainee-service.service';
 })
 export class SearchTraineeComponent implements OnInit {
 
-  traineeId:number=0;
+  traineeId:number;
   model:TraineeModel;
   dataFound:boolean;
   dataNotFound:boolean;

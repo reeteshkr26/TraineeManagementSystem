@@ -5,16 +5,21 @@
                 <mat-label>Entter Trainee Id</mat-label>
                <input matInput name="TraineeId" placeholder="Trainee Id" [(ngModel)]="traineeId">
             </mat-form-field>
+            <mat-form-field >
               <button mat-raised-button color="primary" type="submit" (click)="findById()">Search</button>
+            </mat-form-field>
+
         </mat-card>
 
+        
+            
         <div *ngIf="submitted && dataFound">
             <table class="table table-sum" style="border: 1px;">
                 <thead class="table-primary">
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th>Domain</th>
+                    <th>Trainee Id</th>
+                    <th>Trainee Name</th>
+                    <th>Trainee Location</th>
+                    <th>Trainee Domain</th>
                 </thead>
                 <ng-container>
                     <tr class="table-dark">
@@ -29,5 +34,7 @@
 
         </div>
         <div class="alert alert-danger" *ngIf="submitted && dataNotFound">Data Not Found</div>
+
+  
  
 </div>

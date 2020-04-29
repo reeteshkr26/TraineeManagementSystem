@@ -15,7 +15,7 @@ export class TraineeServiceService {
   }
 
   getTraineeList():Observable<TraineeModel[]>{
-      return this.http.get<TraineeModel[]>(this.baseUrl);
+      return this.http.get<TraineeModel[]>(this.baseUrl);  
   }
 
   addTrainee(traineeModel:TraineeModel):Observable<TraineeModel>{
@@ -23,5 +23,11 @@ export class TraineeServiceService {
   }
   findTraineeById(traineeId:number):Observable<TraineeModel>{
     return this.http.get<TraineeModel>(`${this.baseUrl}/${traineeId}`); //http://localhost:7000/trainees/101
+  }
+  deleteById(traineeId:number):Observable<void>{
+    return this.http.delete<void>(`${this.baseUrl}/${traineeId}`);
+  }
+  updateTrainee(trainee:TraineeModel):Observable<TraineeModel>{
+    return this.http.put<TraineeModel>(this.baseUrl,trainee);
   }
 }
